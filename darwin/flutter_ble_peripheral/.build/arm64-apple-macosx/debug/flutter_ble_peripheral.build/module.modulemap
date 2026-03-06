@@ -1,0 +1,4 @@
+module flutter_ble_peripheral {
+    header "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/flutter_ble_peripheral-Swift.h"
+    requires objc
+}

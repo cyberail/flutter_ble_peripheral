@@ -1,0 +1,59 @@
+{
+  "": {
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/master.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/Delegates/PeripheralManagerDelegate.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/PeripheralManagerDelegate.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/PeripheralManagerDelegate.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/PeripheralManagerDelegate~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/PeripheralManagerDelegate.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/FlutterBlePeripheralManager.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralManager.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralManager.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralManager~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralManager.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/FlutterBlePeripheralPlugin.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralPlugin.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralPlugin.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralPlugin~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralPlugin.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/Handlers/DataReceivedHandler.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/DataReceivedHandler.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/DataReceivedHandler.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/DataReceivedHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/DataReceivedHandler.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/Handlers/MtuChangedHandler.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/MtuChangedHandler.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/MtuChangedHandler.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/MtuChangedHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/MtuChangedHandler.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/Handlers/StateChangedHandler.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/StateChangedHandler.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/StateChangedHandler.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/StateChangedHandler~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/StateChangedHandler.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/Models/FlutterBlePeripheralData.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralData.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralData.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralData~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralData.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/Sources/flutter_ble_peripheral/Models/FlutterBlePeripheralState.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralState.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralState.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralState~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/FlutterBlePeripheralState.swiftdeps"
+  },
+  "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/DerivedSources/resource_bundle_accessor.swift": {
+    "dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/resource_bundle_accessor.d",
+    "object": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/resource_bundle_accessor.swift.o",
+    "swiftmodule": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/resource_bundle_accessor~partial.swiftmodule",
+    "swift-dependencies": "/Users/macintoshi/Desktop/flutter/super_app/packages/flutter_ble_peripheral/darwin/flutter_ble_peripheral/.build/arm64-apple-macosx/debug/flutter_ble_peripheral.build/resource_bundle_accessor.swiftdeps"
+  }
+}

@@ -4,48 +4,52 @@
  * BSD-style license that can be found in the LICENSE file.
  */
 
-#if os(iOS)
-import Flutter
-import UIKit
-#else
-import FlutterMacOS
-import AppKit
-#endif
 import CoreBluetooth
 
+#if os(iOS)
+    import Flutter
+    import UIKit
+#else
+    import FlutterMacOS
+    import AppKit
+#endif
+
 public class FlutterBlePeripheralPlugin: NSObject, FlutterPlugin {
-    
+
     private let flutterBlePeripheralManager: FlutterBlePeripheralManager
-    
+
     private let stateChangedHandler: StateChangedHandler
-//    private let mtuChangedHandler = MtuChangedHandler()
-//    private let dataReceivedHandler = DataReceivedHandler()
+    //    private let mtuChangedHandler = MtuChangedHandler()
+    //    private let dataReceivedHandler = DataReceivedHandler()
     init(stateChangedHandler: StateChangedHandler) {
         self.stateChangedHandler = stateChangedHandler
-        flutterBlePeripheralManager = FlutterBlePeripheralManager(stateChangedHandler: stateChangedHandler)
+        flutterBlePeripheralManager = FlutterBlePeripheralManager(
+            stateChangedHandler: stateChangedHandler)
         super.init()
     }
-    
+
     public static func register(with registrar: FlutterPluginRegistrar) {
-        let instance = FlutterBlePeripheralPlugin(stateChangedHandler: StateChangedHandler(registrar: registrar))
-        
-#if os(iOS)
-        let messenger = registrar.messenger()
-#else
-        let messenger = registrar.messenger
-#endif
-        
+        let instance = FlutterBlePeripheralPlugin(
+            stateChangedHandler: StateChangedHandler(registrar: registrar))
+
+        #if os(iOS)
+            let messenger = registrar.messenger()
+        #else
+            let messenger = registrar.messenger
+        #endif
+
         // Method channel
-        let methodChannel = FlutterMethodChannel(name: "dev.steenbakker.flutter_ble_peripheral/ble_state", binaryMessenger: messenger)
+        let methodChannel = FlutterMethodChannel(
+            name: "dev.steenbakker.flutter_ble_peripheral/ble_state", binaryMessenger: messenger)
         registrar.addMethodCallDelegate(instance, channel: methodChannel)
 
         // Event channels
-//        instance.mtuChangedHandler.register(with: registrar, peripheral: instance.flutterBlePeripheralManager)
-//        instance.dataReceivedHandler.register(with: registrar, peripheral: instance.flutterBlePeripheralManager)
+        //        instance.mtuChangedHandler.register(with: registrar, peripheral: instance.flutterBlePeripheralManager)
+        //        instance.dataReceivedHandler.register(with: registrar, peripheral: instance.flutterBlePeripheralManager)
     }
-    
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
-        switch (call.method) {
+        switch call.method {
         case "start":
             startPeripheral(call, result)
         case "stop":
@@ -73,8 +77,8 @@ public class FlutterBlePeripheralPlugin: NSObject, FlutterPlugin {
         case "openAppSettings":
             openAppSettings()
             result(nil)
-//        case "sendData":
-//            sendData(call, result)
+        //        case "sendData":
+        //            sendData(call, result)
         default:
             result(FlutterMethodNotImplemented)
         }
@@ -89,15 +93,15 @@ public class FlutterBlePeripheralPlugin: NSObject, FlutterPlugin {
         if #available(iOS 13.1, macOS 10.15, *) {
             switch CBPeripheralManager.authorization {
             case .allowedAlways:
-                return 0 // granted
+                return 0  // granted
             case .denied:
-                return 2 // permanentlyDenied
+                return 2  // permanentlyDenied
             case .restricted:
-                return 3 // restricted
+                return 3  // restricted
             case .notDetermined:
-                return 1 // denied (needs to request)
+                return 1  // denied (needs to request)
             @unknown default:
-                break // fall through to state-based check
+                break  // fall through to state-based check
             }
         }
 
@@ -105,70 +109,71 @@ public class FlutterBlePeripheralPlugin: NSObject, FlutterPlugin {
         let state = flutterBlePeripheralManager.peripheralManager.state
         switch state {
         case .unauthorized:
-            return 2 // permanentlyDenied
+            return 2  // permanentlyDenied
         case .poweredOn, .poweredOff:
-            return 0 // granted (if we get these states, we have permission)
+            return 0  // granted (if we get these states, we have permission)
         case .unsupported:
-            return 6 // unsupported
+            return 6  // unsupported
         case .unknown, .resetting:
-            return 7 // unknown
+            return 7  // unknown
         @unknown default:
-            return 7 // unknown
+            return 7  // unknown
         }
     }
-    
+
     private func startPeripheral(_ call: FlutterMethodCall, _ result: @escaping FlutterResult) {
-        let map = call.arguments as? Dictionary<String, Any>
+        let map = call.arguments as? [String: Any]
         let advertiseData = FlutterBlePeripheralData(
-            uuid: map?["serviceUuid"] as? String ,
+            uuid: map?["serviceUuid"] as? String,
             localName: map?["localName"] as? String,
-            uuids: map?["serviceUuids"] as? [String] ,
+            uuids: map?["serviceUuids"] as? [String]
         )
         flutterBlePeripheralManager.start(advertiseData: advertiseData)
         result(nil)
     }
-    
+
     private func stopPeripheral(_ result: @escaping FlutterResult) {
         flutterBlePeripheralManager.peripheralManager.stopAdvertising()
         stateChangedHandler.publishPeripheralState(state: FlutterBlePeripheralState.idle)
         result(nil)
     }
-    
+
     private func isSupported(_ result: @escaping FlutterResult) {
         // Check if the peripheral manager state indicates BLE is unsupported
         result(flutterBlePeripheralManager.peripheralManager.state != .unsupported)
     }
-    
+
     private func openBluetoothSettings() {
-#if os(iOS)
-        // Cannot open bluetooth settings
-        if let url = URL(string: UIApplication.openSettingsURLString) {
-            UIApplication.shared.open(url)
-        }
-#else
-        // Open System Settings to Bluetooth pane on macOS
-        if let url = URL(string: "x-apple.systempreferences:com.apple.BluetoothSettings") {
-            NSWorkspace.shared.open(url)
-        }
-#endif
+        #if os(iOS)
+            // Cannot open bluetooth settings
+            if let url = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(url)
+            }
+        #else
+            // Open System Settings to Bluetooth pane on macOS
+            if let url = URL(string: "x-apple.systempreferences:com.apple.BluetoothSettings") {
+                NSWorkspace.shared.open(url)
+            }
+        #endif
     }
 
     private func openAppSettings() {
-#if os(iOS)
-        if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
-            UIApplication.shared.open(settingsUrl)
-        }
-#else
-        NSWorkspace.shared.open(URL(fileURLWithPath: "/System/Applications/System Settings.app"))
-#endif
+        #if os(iOS)
+            if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsUrl)
+            }
+        #else
+            NSWorkspace.shared.open(
+                URL(fileURLWithPath: "/System/Applications/System Settings.app"))
+        #endif
     }
-    
-//    private func sendData(_ call: FlutterMethodCall,
-//                          _ result: @escaping FlutterResult) {
-//
-//        if let flutterData = call.arguments as? FlutterStandardTypedData {
-//          flutterBlePeripheralManager.send(data: flutterData.data)
-//        }
-//        result(nil)
-//    }
+
+    //    private func sendData(_ call: FlutterMethodCall,
+    //                          _ result: @escaping FlutterResult) {
+    //
+    //        if let flutterData = call.arguments as? FlutterStandardTypedData {
+    //          flutterBlePeripheralManager.send(data: flutterData.data)
+    //        }
+    //        result(nil)
+    //    }
 }
